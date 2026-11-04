@@ -171,7 +171,7 @@ export function StoryChapter({
                   key={`${section.id}-frame-${frameIndex}`}
                   onClick={() => openLightbox(photo)}
                   aria-label={`Open ${section.title} photograph ${sectionIndex + 1} of ${photos.length}`}
-                  className={`photo-veil group relative overflow-hidden rounded-[16px] bg-ink/10 md:absolute ${MOBILE_LAYOUT[frameIndex]} ${FRAME_LAYOUT[frameIndex]} transition-transform duration-500 hover:z-10 hover:scale-[1.012]`}
+                  className={`photo-veil group relative overflow-hidden md:absolute ${MOBILE_LAYOUT[frameIndex]} ${FRAME_LAYOUT[frameIndex]} transition-transform duration-500 hover:z-10 hover:scale-[1.012]`}
                 >
                   <AnimatePresence initial={false}>
                     <motion.div
@@ -201,12 +201,6 @@ export function StoryChapter({
                     className="absolute inset-0 z-[2] bg-[#070b22]/0 transition-colors duration-500 group-hover:bg-[#070b22]/15"
                     aria-hidden
                   />
-                  <span className="absolute bottom-2 left-2 z-10 rounded-full border border-white/25 bg-black/25 px-2 py-0.5 text-[0.52rem] font-semibold tracking-[0.16em] text-white/85 backdrop-blur-md">
-                    {String(sectionIndex + 1).padStart(2, "0")}
-                  </span>
-                  <span className="absolute right-2 top-2 z-10 inline-flex h-7 w-7 translate-y-1 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                    <Expand size={12} aria-hidden />
-                  </span>
                 </button>
               );
             })}
@@ -215,8 +209,7 @@ export function StoryChapter({
 
         <div className="mt-3 flex items-center justify-between gap-3 px-1">
           <p className="text-[0.58rem] font-semibold uppercase tracking-[0.16em] text-ink-muted">
-            {reduceMotion ? "Reduced motion on" : "Tap a photograph to open it"} · independent
-            motion
+            Tap a photograph to open it · independent motion
           </p>
           <p className="hidden text-[0.58rem] uppercase tracking-[0.16em] text-ink-muted sm:block">
             Each chapter moves at its own pace

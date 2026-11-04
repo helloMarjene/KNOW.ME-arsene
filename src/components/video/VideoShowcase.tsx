@@ -1,15 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { CSSProperties } from "react";
-import {
-  ArrowUpRight,
-  ExternalLink,
-  Images,
-  Pause,
-  Play,
-  Video,
-} from "lucide-react";
+import { ArrowUpRight, ExternalLink, Images, Play, Video } from "lucide-react";
 import type { TikTokItem } from "@/lib/types";
 import { LogoMark } from "@/components/branding/Logo";
 import { Reveal } from "@/components/ui/Reveal";
@@ -30,25 +22,10 @@ export function VideoShowcase({
   profileUrl: string | null;
   note: string;
 }) {
-  const [paused, setPaused] = useState(false);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [loadedKey, setLoadedKey] = useState<string | null>(null);
   const [failedKey, setFailedKey] = useState<string | null>(null);
-  const [inView, setInView] = useState(false);
   const loadedRef = useRef<string | null>(null);
-  const stageRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef(new Map<string, HTMLElement>());
-
-  useEffect(() => {
-    const node = stageRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
-      { rootMargin: "240px 0px", threshold: 0.02 },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
 
   useEffect(() => {
     if (!activeKey) return;
@@ -59,33 +36,7 @@ export function VideoShowcase({
     return () => window.clearTimeout(timer);
   }, [activeKey]);
 
-  useEffect(() => {
-    if (!inView || paused) return;
-    const findActive = () => {
-      const viewportCenter = window.innerWidth / 2;
-      let bestKey: string | null = null;
-      let bestDistance = Number.POSITIVE_INFINITY;
-      cardsRef.current.forEach((element, key) => {
-        const rect = element.getBoundingClientRect();
-        if (rect.right < 40 || rect.left > window.innerWidth - 40) return;
-        const distance = Math.abs(rect.left + rect.width / 2 - viewportCenter);
-        if (distance < bestDistance) {
-          bestDistance = distance;
-          bestKey = key;
-        }
-      });
-      if (bestKey) setActiveKey(bestKey);
-    };
-
-    findActive();
-    const timer = window.setInterval(findActive, 1400);
-    return () => window.clearInterval(timer);
-  }, [inView, paused]);
-
-  const copies = [0, 1];
-  const loop = copies.flatMap((copy) =>
-    items.map((item) => ({ item, key: `${copy}-${item.id}`, copy })),
-  );
+  const loop = items.map((item) => ({ item, key: item.id }));
 
   return (
     <section
@@ -122,15 +73,6 @@ export function VideoShowcase({
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setPaused((value) => !value)}
-                aria-pressed={paused}
-                className="btn !min-h-10 border border-white/15 bg-white/10 px-4 text-[0.72rem] text-white backdrop-blur-xl transition-colors hover:bg-white/20"
-              >
-                {paused ? <Play size={14} aria-hidden /> : <Pause size={14} aria-hidden />}
-                {paused ? "Resume slider" : "Pause slider"}
-              </button>
               {profileUrl && (
                 <a
                   href={profileUrl}
@@ -147,26 +89,15 @@ export function VideoShowcase({
         </Reveal>
       </div>
 
-      <div
-        ref={stageRef}
-        className="marquee relative mt-10 overflow-hidden motion-reduce:overflow-x-auto sm:mt-14"
-        data-paused={paused}
-      >
-        <div className="fade-x motion-reduce:[mask-image:none]">
-          <div
-            className="marquee-track gap-3 px-3 sm:gap-4 sm:px-5"
-            style={{ "--marquee-duration": "110s" } as CSSProperties}
-          >
+      <div className="relative mt-10 snap-x snap-mandatory overflow-x-auto overflow-y-hidden pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mt-14">
+        <div className="fade-x">
+          <div className="flex w-max gap-3 px-3 py-1 sm:gap-4 sm:px-5">
             {loop.map(({ item, key }, index) => {
-              const isActive = inView && activeKey === key;
+              const isActive = activeKey === key;
               const isLoaded = loadedKey === key;
               return (
                 <article
                   key={key}
-                  ref={(node) => {
-                    if (node) cardsRef.current.set(key, node);
-                    else cardsRef.current.delete(key);
-                  }}
                   onPointerEnter={() => setActiveKey(key)}
                   aria-label={`${item.label} — official TikTok ${item.kind} embed`}
                   className="w-[13.5rem] shrink-0 snap-center sm:w-[15.5rem]"
@@ -260,10 +191,7 @@ export function VideoShowcase({
                       ) : (
                         <button
                           type="button"
-                          onClick={() => {
-                            setActiveKey(key);
-                            setPaused(true);
-                          }}
+                          onClick={() => setActiveKey(key)}
                           className="absolute inset-0 z-10 flex items-center justify-center bg-[#070b22]/0 transition-colors duration-300 hover:bg-[#070b22]/15"
                           aria-label={`Load the official TikTok player for ${item.label}`}
                         >
@@ -303,7 +231,7 @@ export function VideoShowcase({
 
       <div className="section-shell relative mt-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-[0.6rem] uppercase tracking-[0.18em] text-white/35">
-          Hover to pause · tap a card to load its player · one player at a time
+          Swipe or scroll · tap a card to play it · one player at a time
         </p>
         <p className="text-[0.6rem] uppercase tracking-[0.18em] text-white/35">
           Autoplay is controlled by TikTok

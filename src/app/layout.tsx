@@ -86,7 +86,7 @@ export const viewport: Viewport = {
   colorScheme: "light dark",
 };
 
-const themeScript = `(function(){try{var t=localStorage.getItem("know-me-theme");if(t!=="light"&&t!=="dark"){t="dark";}var d=document.documentElement;d.dataset.theme=t;d.style.colorScheme=t;}catch(e){document.documentElement.dataset.theme="dark";}})();`;
+const themeScript = `(function(){var d=document.documentElement;d.dataset.theme="dark";d.style.colorScheme="dark";})();`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

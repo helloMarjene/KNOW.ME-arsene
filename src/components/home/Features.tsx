@@ -67,7 +67,7 @@ export function Features() {
             <FeatureCard
               icon={Images}
               title="Visual storytelling, not a gallery dump"
-              body="Photographs are arranged into paced chapters with independent motion. You can pause any chapter, or turn motion off across the whole profile."
+              body="Photographs are arranged into frameless, paced chapters that move independently. Scroll away and they rest; tap any photograph to open it full screen."
             >
               <div className="flex gap-2">
                 {strip.map((photo, index) => (

@@ -11,7 +11,7 @@ const DEMO: StorySection = {
   title: "Portrait frames",
   headline: "This is what a chapter feels like.",
   description:
-    "Six frames run independently inside every chapter. Scroll away and the motion pauses; pause it yourself and it waits. Tap any frame to open the full-size photograph.",
+    "Six frames run independently inside every chapter. Scroll away and the motion rests. Tap any frame to open the full-size photograph.",
   accent: "blue",
   photos: ["1", "3", "4", "5", "6", "8", "9", "10", "11", "14", "16", "17"],
 };

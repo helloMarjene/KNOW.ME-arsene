@@ -9,12 +9,6 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
     root.dataset.theme = next;
     root.style.colorScheme = next;
 
-    try {
-      localStorage.setItem("know-me-theme", next);
-    } catch {
-      /* storage unavailable — the in-session theme still applies */
-    }
-
     document
       .querySelectorAll('meta[name="theme-color"]')
       .forEach((meta) =>
