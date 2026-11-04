@@ -1,0 +1,419 @@
+{
+  "slug": "arsene",
+  "published": true,
+  "identity": {
+    "fullName": "Arsene Kahunga",
+    "firstName": "Arsene",
+    "title": "Founder & Software Developer",
+    "positioning": [
+      "Founder",
+      "Software Developer",
+      "Technology Enthusiast",
+      "Product Builder"
+    ],
+    "location": "Kampala, Uganda",
+    "company": "M.A.R.J.E.N.E Software Development",
+    "tagline": "We build. You grow.",
+    "summary": "One person. One profile. One link. One QR code. A complete digital identity.",
+    "intro": [
+      "I am Arsene Kahunga, a Founder and Software Developer passionate about building practical software solutions, exploring emerging technologies and transforming ideas into meaningful digital products.",
+      "Through M.A.R.J.E.N.E Software Development, I work on websites, mobile applications, desktop software and digital solutions designed to solve real-world problems. My interests span software engineering, application development, technology innovation, business systems and continuous learning.",
+      "I believe in building technology that makes a difference, creating opportunities through innovation and growing through every project."
+    ],
+    "tools": [
+      "C++",
+      "C",
+      "Dart",
+      "Flutter",
+      "PHP",
+      "Laravel",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Python",
+      "PostgreSQL",
+      "SQLite",
+      "Software Architecture",
+      "API Development",
+      "Application Development",
+      "Artificial Intelligence",
+      "Embedded Systems",
+      "Technology Innovation"
+    ],
+    "avatar": "/branding/arsene-avatar.jpg",
+    "coverPhotos": ["107", "69", "102", "30", "108"],
+    "coverAlt": "Portrait of Arsene Kahunga wearing a white shirt and backpack"
+  },
+  "contact": {
+    "email": "hello@marjenesoftwaredev.com",
+    "phone": null,
+    "whatsapp": null,
+    "website": "https://www.marjenesoftwaredev.com"
+  },
+  "socials": [
+    {
+      "platform": "tiktok",
+      "label": "TikTok",
+      "href": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev",
+      "handle": "@m.a.r.j.e.n.e_soft.dev"
+    },
+    {
+      "platform": "website",
+      "label": "Company website",
+      "href": "https://www.marjenesoftwaredev.com",
+      "handle": "marjenesoftwaredev.com"
+    },
+    {
+      "platform": "email",
+      "label": "Email",
+      "href": "mailto:hello@marjenesoftwaredev.com",
+      "handle": "hello@marjenesoftwaredev.com"
+    }
+  ],
+  "story": {
+    "eyebrow": "Visual biography",
+    "title": "MY LIFE IN FRAMES",
+    "headline": "A story told in light, colour and presence.",
+    "description": "Five small collections from the camera roll. Each one moves at its own pace, and every photograph opens full screen when you tap it.",
+    "sections": [
+      {
+        "id": "portrait",
+        "eyebrow": "01 — Portrait",
+        "title": "MY STORY",
+        "headline": "The person behind the work.",
+        "description": "Quiet, honest portraits — the face, the focus and the everyday moments that shape the work.",
+        "accent": "blue",
+        "photos": [
+          "1",
+          "3",
+          "4",
+          "5",
+          "6",
+          "8",
+          "9",
+          "10",
+          "11",
+          "14",
+          "16",
+          "17",
+          "19",
+          "20",
+          "23",
+          "26",
+          "46",
+          "48",
+          "49",
+          "50",
+          "52",
+          "53",
+          "56",
+          "76",
+          "104",
+          "109",
+          "112",
+          "118",
+          "126",
+          "127",
+          "130",
+          "135"
+        ]
+      },
+      {
+        "id": "style",
+        "eyebrow": "02 — Image",
+        "title": "MY STYLE",
+        "headline": "Comfortable in my own frame.",
+        "description": "Colour, movement and the confidence of showing up as yourself.",
+        "accent": "pink",
+        "photos": [
+          "55",
+          "57",
+          "58",
+          "59",
+          "60",
+          "61",
+          "62",
+          "65",
+          "66",
+          "67",
+          "70",
+          "72",
+          "73",
+          "74",
+          "75",
+          "79",
+          "93",
+          "94",
+          "95",
+          "97",
+          "100",
+          "111",
+          "115",
+          "117",
+          "121",
+          "122"
+        ]
+      },
+      {
+        "id": "presence",
+        "eyebrow": "03 — Profession",
+        "title": "MY PRESENCE",
+        "headline": "Professional, present, prepared.",
+        "description": "Frames from the formal side of a builder's life — dressed for the room and focused on the next problem worth solving.",
+        "accent": "indigo",
+        "photos": [
+          "28",
+          "29",
+          "33",
+          "68",
+          "69",
+          "78",
+          "83",
+          "84",
+          "85",
+          "101",
+          "102",
+          "107",
+          "108",
+          "132"
+        ]
+      },
+      {
+        "id": "moments",
+        "eyebrow": "04 — People",
+        "title": "MY MOMENTS",
+        "headline": "The moments that matter most.",
+        "description": "Time shared with the people around me. The work matters; the people make it worth it.",
+        "accent": "rose",
+        "photos": [
+          "7",
+          "38",
+          "43",
+          "44",
+          "77",
+          "106",
+          "125",
+          "133",
+          "134"
+        ]
+      },
+      {
+        "id": "energy",
+        "eyebrow": "05 — Motion",
+        "title": "MY ENERGY",
+        "headline": "Always in motion.",
+        "description": "Outdoors, on the move and occasionally off the ground — the lighter side of a builder's rhythm.",
+        "accent": "teal",
+        "photos": [
+          "12",
+          "13",
+          "30",
+          "31",
+          "37",
+          "39",
+          "40",
+          "41",
+          "42",
+          "47",
+          "91",
+          "99",
+          "113",
+          "114",
+          "116",
+          "119",
+          "120",
+          "123",
+          "124",
+          "131"
+        ]
+      }
+    ]
+  },
+  "videos": {
+    "profileUrl": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev",
+    "note": "Official TikTok embeds. Three posts are videos and four are photo carousels. Autoplay and playback are controlled by TikTok, and embeds leave the stage when they move out of view.",
+    "items": [
+      {
+        "id": "7688290313391066389",
+        "kind": "photo",
+        "label": "Post 01",
+        "url": "https://vt.tiktok.com/ZSpNroR8q/",
+        "canonical": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev/photo/7688290313391066389"
+      },
+      {
+        "id": "7688289913405541653",
+        "kind": "photo",
+        "label": "Post 02",
+        "url": "https://vt.tiktok.com/ZSpNr4tQy/",
+        "canonical": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev/photo/7688289913405541653"
+      },
+      {
+        "id": "7663346757564255508",
+        "kind": "video",
+        "label": "Post 03",
+        "url": "https://vt.tiktok.com/ZSpNrc719/",
+        "canonical": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev/video/7663346757564255508"
+      },
+      {
+        "id": "7662727310205898005",
+        "kind": "video",
+        "label": "Post 04",
+        "url": "https://vt.tiktok.com/ZSpNrtqRy/",
+        "canonical": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev/video/7662727310205898005"
+      },
+      {
+        "id": "7661636037298490644",
+        "kind": "photo",
+        "label": "Post 05",
+        "url": "https://vt.tiktok.com/ZSpNrTo4N/",
+        "canonical": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev/photo/7661636037298490644"
+      },
+      {
+        "id": "7661268916529876244",
+        "kind": "photo",
+        "label": "Post 06",
+        "url": "https://vt.tiktok.com/ZSpNrpYxL/",
+        "canonical": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev/photo/7661268916529876244"
+      },
+      {
+        "id": "7660920328243219733",
+        "kind": "photo",
+        "label": "Post 07",
+        "url": "https://vt.tiktok.com/ZSpNrg32c/",
+        "canonical": "https://www.tiktok.com/@m.a.r.j.e.n.e_soft.dev/photo/7660920328243219733"
+      }
+    ]
+  },
+  "timeline": {
+    "birthday": null,
+    "note": "Only confirmed milestones appear here. Dates and personal details are added with consent.",
+    "entries": [
+      {
+        "period": "Now",
+        "title": "Founder & Software Developer",
+        "description": "Leading M.A.R.J.E.N.E Software Development from Kampala, building websites, applications, desktop tools and business systems.",
+        "icon": "briefcase"
+      },
+      {
+        "period": "Ongoing",
+        "title": "The product workbench",
+        "description": "mjnWord, M.A.R.J.E.N.E Business Assistant, EduSteps, School Manager, marjenePAY and Riloc — products in different stages of development.",
+        "icon": "layers"
+      },
+      {
+        "period": "Always",
+        "title": "Learning by building",
+        "description": "Exploring AI, embedded systems, software architecture and new ways to turn ideas into working products.",
+        "icon": "brain"
+      },
+      {
+        "period": "Next",
+        "title": "Growing the ecosystem",
+        "description": "Refining KNOW ME and the M.A.R.J.E.N.E product line. Release dates and availability are shared as they are confirmed.",
+        "icon": "compass"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "What I build",
+    "title": "FROM IDEA TO WORKING PRODUCT",
+    "items": [
+      {
+        "title": "Website Development",
+        "description": "Fast, responsive websites and digital experiences engineered for clarity.",
+        "icon": "globe"
+      },
+      {
+        "title": "Mobile Applications",
+        "description": "Flutter and Dart applications designed for real everyday use.",
+        "icon": "smartphone"
+      },
+      {
+        "title": "Desktop Software",
+        "description": "Practical desktop tools built with performance and reliability in mind.",
+        "icon": "monitor"
+      },
+      {
+        "title": "API Development",
+        "description": "Clean interfaces and services that connect products and data.",
+        "icon": "braces"
+      },
+      {
+        "title": "Business Systems",
+        "description": "Management tools that bring order to day-to-day operations.",
+        "icon": "layout"
+      },
+      {
+        "title": "Graphic Design",
+        "description": "Considered visual communication that supports the product.",
+        "icon": "pen"
+      },
+      {
+        "title": "Digital Solutions",
+        "description": "Thoughtful combinations of software, design and strategy.",
+        "icon": "sparkles"
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "The workshop",
+    "title": "MY PROJECTS",
+    "note": "Statuses reflect the current workshop listing. Unreleased products are not presented as commercially available.",
+    "items": [
+      {
+        "name": "M.A.R.J.E.N.E Software Development",
+        "description": "The studio behind websites, mobile apps, desktop software and business systems — founded and led by Arsene.",
+        "status": "Active company",
+        "href": "https://www.marjenesoftwaredev.com"
+      },
+      {
+        "name": "mjnWord",
+        "description": "A word-processing product being shaped inside the M.A.R.J.E.N.E workshop.",
+        "status": "In development",
+        "href": null
+      },
+      {
+        "name": "M.A.R.J.E.N.E Business Assistant",
+        "description": "A business-focused assistant designed to support everyday operations.",
+        "status": "In development",
+        "href": null
+      },
+      {
+        "name": "M.A.R.J.E.N.E EduSteps",
+        "description": "An education-focused product line in development.",
+        "status": "In development",
+        "href": null
+      },
+      {
+        "name": "M.A.R.J.E.N.E School Manager",
+        "description": "A school management system built around real administrative workflows.",
+        "status": "In development",
+        "href": null
+      },
+      {
+        "name": "marjenePAY",
+        "description": "A payments product concept from the M.A.R.J.E.N.E workshop.",
+        "status": "In development",
+        "href": null
+      },
+      {
+        "name": "Riloc Digital Platform",
+        "description": "A digital platform exploration. Details will be shared when the direction is confirmed.",
+        "status": "Exploration",
+        "href": null
+      }
+    ]
+  },
+  "cta": {
+    "heading": "Have an idea? Let's build something meaningful.",
+    "body": "Tell us what you are imagining. The KNOW ME team and M.A.R.J.E.N.E will help you shape it, build it and put it in front of the right people.",
+    "buttonLabel": "Work With M.A.R.J.E.N.E",
+    "href": "https://www.marjenesoftwaredev.com"
+  },
+  "seo": {
+    "title": "Arsene Kahunga | KNOW ME",
+    "description": "Discover Arsene Kahunga, Founder & Software Developer at M.A.R.J.E.N.E Software Development. Explore his professional journey, projects, experiences and connections.",
+    "ogImage": "/branding/og-arsene.jpg"
+  }
+}
