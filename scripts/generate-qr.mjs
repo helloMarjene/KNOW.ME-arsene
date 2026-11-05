@@ -6,7 +6,7 @@ import path from "node:path";
 const OUT = path.join(process.cwd(), "public", "qr");
 
 await mkdir(OUT, { recursive: true });
-await QRCode.toFile(path.join(OUT, "arsene-demo.png"), "https://www.marjenesoftwaredev.com/arsene", {
+await QRCode.toFile(path.join(OUT, "arsene-demo.png"), "https://knowme-arsene.vercel.app/arsene", {
   errorCorrectionLevel: "H",
   margin: 4,
   width: 1024,

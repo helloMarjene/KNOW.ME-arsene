@@ -2,9 +2,7 @@ export const SITE = {
   name: "KNOW ME",
   tagline: "Your Identity. Your Story. Your Connection.",
   promise: "Your entire identity. One digital experience.",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-    "https://www.marjenesoftwaredev.com",
+  url: "https://knowme-arsene.vercel.app",
   company: {
     name: "M.A.R.J.E.N.E Software Development",
     shortName: "M.A.R.J.E.N.E",

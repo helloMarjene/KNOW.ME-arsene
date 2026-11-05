@@ -6,15 +6,9 @@
 - A host that supports Next.js server rendering and image optimization (Vercel is the reference target)
 - The production origin, for canonical URLs and QR generation
 
-## Environment
+## Canonical origin
 
-| Variable | Required | Example |
-| --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Recommended | `https://www.marjenesoftwaredev.com` |
-
-If unset, the app falls back to `https://www.marjenesoftwaredev.com`. Set it explicitly for previews and any custom domain so canonical links, sitemap entries, Open Graph URLs and the profile QR all point at the right origin.
-
-`NEXT_PUBLIC_*` values are inlined at build time; rebuild after changing them.
+The public origin is `https://knowme-arsene.vercel.app`, defined as `SITE.url` in `src/lib/site.ts`. It drives canonical links, Open Graph and Twitter URLs, sitemap and robots entries, and the profile QR. If the production domain changes, update that value and rebuild.
 
 ## Build & run
 
@@ -30,10 +24,9 @@ The build statically generates the homepage and every published profile. `src/da
 ## Vercel
 
 1. Import the repository; the framework is detected as Next.js.
-2. Add `NEXT_PUBLIC_SITE_URL` for Production and Preview environments.
-3. Deploy. No database, storage bucket or cron job is required.
-4. Attach the production domain and redeploy so canonical URLs and OG tags use it.
-5. Regenerate the homepage demo QR if the domain changed:
+2. Deploy. No database, storage bucket or cron job is required.
+3. Keep `knowme-arsene.vercel.app` as the production domain, or update `SITE.url` in `src/lib/site.ts` if a different domain is attached, then redeploy.
+4. Regenerate the homepage demo QR if the domain changed:
 
    ```bash
    node scripts/generate-qr.mjs
@@ -69,7 +62,7 @@ The video section uses TikTok’s official embed (`https://www.tiktok.com/embed/
 ## Post-deploy verification
 
 - [ ] `/` and `/arsene` return 200; an unknown slug returns 404.
-- [ ] `/sitemap.xml` lists only published profiles and uses the production origin.
+- [ ] `/sitemap.xml` lists only published profiles and uses `https://knowme-arsene.vercel.app`.
 - [ ] Canonical, Open Graph and Twitter tags reference the production URL and OG image.
 - [ ] `/api/vcard/arsene` downloads a `.vcf` with no unapproved phone number.
 - [ ] QR PNG/SVG downloads scan and open the permanent profile URL.

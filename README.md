@@ -27,12 +27,7 @@ npm run build
 npm run start
 ```
 
-Set `NEXT_PUBLIC_SITE_URL` when the public origin differs from `https://www.marjenesoftwaredev.com`. The value is used for canonical URLs, Open Graph URLs, the sitemap and the QR code encoded on the profile.
-
-```bash
-# .env.local
-NEXT_PUBLIC_SITE_URL=https://your-domain.example
-```
+The canonical public origin is `https://knowme-arsene.vercel.app`, defined as `SITE.url` in `src/lib/site.ts`. It is used for canonical URLs, Open Graph URLs, the sitemap and the QR code encoded on the profile. Update it there if the production domain changes.
 
 ## Routes
 

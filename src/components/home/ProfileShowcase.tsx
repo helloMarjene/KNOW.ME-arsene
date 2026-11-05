@@ -182,13 +182,13 @@ export function ProfileShowcase() {
                       </div>
                     </div>
 
-                    <div className="col-span-3 row-span-2 flex items-center justify-between gap-3 rounded-[18px] border border-white/15 bg-white/[0.08] p-3 backdrop-blur-md">
-                      <div className="min-w-0">
+                    <div className="col-span-3 row-span-2 flex flex-col justify-center gap-1.5 rounded-[18px] border border-white/15 bg-white/[0.08] p-2 backdrop-blur-md sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:p-3">
+                      <div className="order-2 min-w-0 sm:order-1">
                         <p className="text-[0.5rem] font-semibold uppercase tracking-[0.16em] text-white/50">
                           Public link
                         </p>
-                        <p className="mt-0.5 break-all text-[0.72rem] font-semibold leading-snug text-white">
-                          marjenesoftwaredev.com/arsene
+                        <p className="mt-0.5 text-[0.62rem] font-semibold leading-snug text-white sm:text-[0.72rem]">
+                          <span className="inline-block">knowme-arsene</span><span className="inline-block">.vercel.app</span><span className="inline-block">/arsene</span>
                         </p>
                       </div>
                       <Image
@@ -196,7 +196,7 @@ export function ProfileShowcase() {
                         alt=""
                         width={1024}
                         height={1024}
-                        className="h-14 w-14 shrink-0 rounded-lg bg-white p-1 sm:h-16 sm:w-16"
+                        className="order-1 h-9 w-9 shrink-0 rounded-md bg-white p-0.5 sm:order-2 sm:h-16 sm:w-16 sm:rounded-lg sm:p-1"
                       />
                     </div>
                   </div>
