@@ -1,4 +1,5 @@
 import { getProfile } from "@/lib/profiles";
+import { PROFILES_PUBLIC } from "@/lib/site";
 import { buildVCard, vcardFileName } from "@/lib/vcard";
 
 export async function GET(
@@ -6,7 +7,7 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> },
 ) {
   const { slug } = await params;
-  const profile = getProfile(slug);
+  const profile = PROFILES_PUBLIC ? getProfile(slug) : null;
 
   if (!profile) {
     return new Response("Profile not found", {

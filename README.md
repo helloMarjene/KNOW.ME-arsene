@@ -34,13 +34,13 @@ The canonical public origin is `https://knowme-arsene.vercel.app`, defined as `S
 | Route | Purpose |
 | --- | --- |
 | `/` | KNOW ME marketing homepage, live profile preview, story demo, QR demo |
-| `/arsene` | Arsene Kahunga’s published profile |
-| `/<slug>` | Any valid profile in `src/data/profiles/` (statically generated) |
-| `/api/vcard/<slug>` | Downloadable vCard generated from published contact fields |
+| `/arsene` | Arsene Kahunga’s profile — localhost only; redirects to `/#profiles` on Vercel |
+| `/<slug>` | Any valid profile in `src/data/profiles/` — generated locally only |
+| `/api/vcard/<slug>` | Downloadable vCard — localhost only |
 | `/robots.txt`, `/sitemap.xml` | Crawler metadata |
 | `/qr/arsene-demo.png` | Print-ready demo QR on the homepage |
 
-Unknown or unpublished slugs return the custom 404 page.
+Hosted builds (`VERCEL=1`) generate no profile routes, omit them from the sitemap and return 404 from the vCard endpoint. Unknown or unpublished slugs return the custom 404 page.
 
 ## Content model
 

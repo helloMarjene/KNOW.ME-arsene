@@ -10,6 +10,10 @@
 
 The public origin is `https://knowme-arsene.vercel.app`, defined as `SITE.url` in `src/lib/site.ts`. It drives canonical links, Open Graph and Twitter URLs, sitemap and robots entries, and the profile QR. If the production domain changes, update that value and rebuild.
 
+## Profile visibility
+
+Profiles are available on localhost only. Vercel builds receive `VERCEL=1`, so no profile routes are generated, the sitemap omits profile URLs, and `/api/vcard/[slug]` returns 404. `/arsene` redirects to `/#profiles` on the hosted site. Locally the full profile is generated and served. To reproduce the hosted behavior locally, build and start with `VERCEL=1`.
+
 ## Build & run
 
 ```bash
@@ -61,10 +65,11 @@ The video section uses TikTok’s official embed (`https://www.tiktok.com/embed/
 
 ## Post-deploy verification
 
-- [ ] `/` and `/arsene` return 200; an unknown slug returns 404.
-- [ ] `/sitemap.xml` lists only published profiles and uses `https://knowme-arsene.vercel.app`.
+- [ ] `/` returns 200; `/arsene` redirects to `/#profiles`; an unknown slug returns 404.
+- [ ] `/api/vcard/arsene` returns 404 on the hosted site.
+- [ ] `/sitemap.xml` lists only the homepage and uses `https://knowme-arsene.vercel.app`.
 - [ ] Canonical, Open Graph and Twitter tags reference the production URL and OG image.
-- [ ] `/api/vcard/arsene` downloads a `.vcf` with no unapproved phone number.
+- [ ] `/api/vcard/arsene` downloads a `.vcf` locally, with no unapproved phone number.
 - [ ] QR PNG/SVG downloads scan and open the permanent profile URL.
 - [ ] TikTok cards either play via the official embed or show the fallback without console errors.
 - [ ] Light and dark themes at 390px and 1440px: no horizontal scroll, fixed contact dock visible and above the safe area.

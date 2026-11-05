@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getProfileSlugs } from "@/lib/profiles";
-import { SITE } from "@/lib/site";
+import { PROFILES_PUBLIC, SITE } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -11,11 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
-    ...getProfileSlugs().map((slug) => ({
-      url: `${SITE.url}/${slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.9,
-    })),
+    ...(PROFILES_PUBLIC
+      ? getProfileSlugs().map((slug) => ({
+          url: `${SITE.url}/${slug}`,
+          lastModified: now,
+          changeFrequency: "monthly" as const,
+          priority: 0.9,
+        }))
+      : []),
   ];
 }

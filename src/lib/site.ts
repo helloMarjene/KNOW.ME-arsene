@@ -13,6 +13,8 @@ export const SITE = {
   demoSlug: "arsene",
 } as const;
 
+export const PROFILES_PUBLIC = !process.env.VERCEL;
+
 export function profileUrl(slug: string): string {
   return `${SITE.url}/${slug}`;
 }

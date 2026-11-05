@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getProfile, getProfileSlugs } from "@/lib/profiles";
-import { profileUrl, SITE } from "@/lib/site";
+import { PROFILES_PUBLIC, profileUrl, SITE } from "@/lib/site";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ProfileHero } from "@/components/profile/ProfileHero";
@@ -19,6 +19,7 @@ import { QrShare } from "@/components/profile/QrShare";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
+  if (!PROFILES_PUBLIC) return [];
   return getProfileSlugs().map((slug) => ({ slug }));
 }
 
