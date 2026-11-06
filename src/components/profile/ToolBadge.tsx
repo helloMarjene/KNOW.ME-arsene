@@ -48,28 +48,33 @@ const GENERIC: Record<string, { Icon: typeof Layers; color: string }> = {
 export function ToolBadge({ tool }: { tool: string }) {
   const brand = BRANDS[tool];
   const generic = GENERIC[tool];
+  const iconColor = brand ? brand.hex : generic?.color ?? "#1b31e0";
 
   return (
-    <li className="inline-flex items-center gap-2 rounded-full border border-white/75 bg-white/50 py-1.5 pl-1.5 pr-3 text-[0.7rem] font-semibold text-ink-soft backdrop-blur-md transition-colors hover:border-brand-blue/30 hover:bg-white/80 hover:text-brand-blue">
-      <span className="theme-light-tile inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+    <li
+      className="theme-light-tile inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/75 bg-white/50 shadow-sm backdrop-blur-md transition-transform hover:-translate-y-1 hover:border-brand-blue/30 hover:bg-white/80 sm:h-16 sm:w-16"
+      title={tool}
+      aria-label={tool}
+    >
+      <span className="inline-flex h-11 w-11 items-center justify-center sm:h-12 sm:w-12">
         {brand ? (
           <svg
             viewBox="0 0 24 24"
-            width={13}
-            height={13}
-            style={{ color: brand.hex }}
+            width={30}
+            height={30}
+            className="sm:h-[34px] sm:w-[34px]"
+            style={{ color: iconColor }}
             aria-hidden="true"
             focusable="false"
           >
             <path fill="currentColor" d={brand.path} />
           </svg>
         ) : generic ? (
-          <generic.Icon size={13} style={{ color: generic.color }} aria-hidden />
+          <generic.Icon size={30} className="sm:h-[34px] sm:w-[34px]" style={{ color: iconColor }} aria-hidden />
         ) : (
-          <Lightbulb size={13} style={{ color: "#1b31e0" }} aria-hidden />
+          <Lightbulb size={30} className="sm:h-[34px] sm:w-[34px]" style={{ color: iconColor }} aria-hidden />
         )}
       </span>
-      {tool}
     </li>
   );
 }

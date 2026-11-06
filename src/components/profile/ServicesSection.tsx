@@ -59,7 +59,7 @@ export function ServicesSection({ profile }: { profile: Profile }) {
                 delay={Math.min(index * 0.04, 0.25)}
                 className={SPANS[index] ?? "lg:col-span-2"}
               >
-                <div className="glass glass-hover group relative flex h-full min-h-[10.5rem] flex-col justify-between overflow-hidden rounded-[24px] p-5 sm:p-6">
+                <div className="glass glass-hover group relative flex min-h-[10.5rem] h-full flex-col justify-between overflow-hidden rounded-[24px] p-5 sm:p-6">
                   <div
                     aria-hidden
                     className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[radial-gradient(circle,rgba(10,28,180,0.12),transparent_70%)] opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100"

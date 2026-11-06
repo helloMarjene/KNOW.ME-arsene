@@ -96,7 +96,7 @@ export function ProjectsSection({ profile }: { profile: Profile }) {
         <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {rest.map((project, index) => (
             <Reveal key={project.name} delay={Math.min(index * 0.05, 0.3)}>
-              <div className="glass glass-hover group flex h-full flex-col rounded-[24px] p-5">
+              <div className="glass glass-hover group flex h-auto min-h-full flex-col rounded-[24px] p-5 sm:h-full">
                 <div className="flex items-center justify-between gap-3">
                   <span className="text-[0.56rem] font-semibold uppercase tracking-[0.2em] text-ink-muted/70">
                     P.{String(index + 2).padStart(2, "0")}

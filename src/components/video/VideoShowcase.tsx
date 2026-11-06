@@ -36,6 +36,22 @@ export function VideoShowcase({
     return () => window.clearTimeout(timer);
   }, [activeKey]);
 
+  useEffect(() => {
+    if (!activeKey) return;
+    const activeIndex = items.findIndex((item) => item.id === activeKey);
+    if (activeIndex < 0) return;
+
+    const timer = window.setTimeout(() => {
+      const nextIndex = (activeIndex + 1) % items.length;
+      loadedRef.current = null;
+      setLoadedKey(null);
+      setFailedKey(null);
+      setActiveKey(items[nextIndex]?.id ?? null);
+    }, 15_000);
+
+    return () => window.clearTimeout(timer);
+  }, [activeKey, items]);
+
   const loop = items.map((item) => ({ item, key: item.id }));
 
   return (
@@ -231,7 +247,7 @@ export function VideoShowcase({
 
       <div className="section-shell relative mt-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-[0.6rem] uppercase tracking-[0.18em] text-white/35">
-          Swipe or scroll · tap a card to play it · one player at a time
+          Swipe or scroll · tap a card to play it · each player stops after 15 seconds
         </p>
         <p className="text-[0.6rem] uppercase tracking-[0.18em] text-white/35">
           Autoplay is controlled by TikTok
